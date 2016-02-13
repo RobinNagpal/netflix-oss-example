@@ -1,0 +1,131 @@
+.rotated-text {
+	display: inline-block;
+	overflow: hidden;
+	width: 1.5em;
+}
+
+.rotated-text__inner {
+	display: inline-block;
+	white-space: nowrap;
+	/* this is for shity "non IE" browsers
+       that dosn't support writing-mode */
+	-webkit-transform: translate(1.1em, 0) rotate(90deg);
+	-moz-transform: translate(1.1em, 0) rotate(90deg);
+	-o-transform: translate(1.1em, 0) rotate(90deg);
+	transform: translate(1.1em, 0) rotate(90deg);
+	-webkit-transform-origin: 0 0;
+	-moz-transform-origin: 0 0;
+	-o-transform-origin: 0 0;
+	transform-origin: 0 0;
+	/* IE9+ */
+	-ms-transform: none;
+	-ms-transform-origin: none;
+	/* IE8+ */
+	-ms-writing-mode: tb-rl;
+	/* IE7 and below */
+	*writing-mode: tb-rl;
+}
+
+.rotated-text__inner:before {
+	content: "";
+	float: left;
+	margin-top: 100%;
+}
+
+.outer-container {
+	width: 80%;
+	background-color: #e0e0d1;
+	min-height: 700px;
+	align-content: center;
+	align-self: center;
+	box-shadow: 0 0 20px black;
+	margin-top: 20px;
+}
+
+.center-align {
+	align-content: center;
+	align-self: center;
+	align-items: center;
+}
+
+.top-bottom-margins-m {
+	margin-top: 30px;
+	margin-bottom: 30px
+}
+
+.top-bottom-margins-s {
+	margin-top: 10px;
+	margin-bottom: 10px
+}
+
+.zuul {
+	background-color: #ff8080;
+	min-height: 350px;
+}
+
+.zuul-txt {
+	padding-left: 130px;
+	font-size: 60px;
+	padding-bottom: 50px;
+}
+
+.vertical-text {
+	transform: rotate(90deg);
+}
+
+.eureka-container {
+	margin-top: 20px;
+	padding-top: 10px;
+	height: 100px;
+	background-color: #ff8433;
+}
+
+.eureka-txt {
+	align-content: center;
+	align-self: center;
+	text-align: center;
+	font-size: 60px;
+}
+
+.turbine-container {
+	margin-top: 20px;
+	padding-top: 10px;
+	height: 100px;
+	background-color: #ffdb4d;
+}
+
+.turbine-txt {
+	align-content: center;
+	align-self: center;
+	text-align: center;
+	font-size: 60px;
+}
+
+.hystrix-dashboard-container {
+	margin-top: 20px;
+	padding-top: 10px;
+	height: 100px;
+	background-color: #ffad33;
+	margin-bottom: 20px;
+}
+
+.hystrix-dashboard-txt {
+	align-content: center;
+	align-self: center;
+	text-align: center;
+	font-size: 60px;
+}
+
+.service-container {
+	float:left;
+	height: 170px;
+	width: 160px; 
+	padding-top: 20px;
+	background-color : #d279a6;
+	margin-top: 10px;
+	background-color: #d279a6;
+	text-align: center;
+	font-size: 16px;
+	margin-left: 10px;
+	
+}

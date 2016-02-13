@@ -1,0 +1,30 @@
+spring:
+  application:
+     name: turbine-server
+server:
+  port: 9999
+
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.web: DEBUG
+
+  
+turbine:
+  appConfig: employee-service,zuul-server
+  clusterNameExpression: new String("default")  
+  InstanceDiscovery:
+  impl: com.netflix.turbine.discovery.EurekaInstanceDiscovery  
+  
+InstanceDiscovery:
+  impl: com.netflix.turbine.discovery.EurekaInstanceDiscovery  
+      
+# Discovery Server Access
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 5  
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+    

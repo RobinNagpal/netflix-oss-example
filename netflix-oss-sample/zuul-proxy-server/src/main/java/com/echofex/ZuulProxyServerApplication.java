@@ -7,7 +7,6 @@ import org.springframework.boot.orm.jpa.EntityScan;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 @SpringBootApplication
-@EntityScan("com.echofex")
 @EnableZuulProxy
 public class ZuulProxyServerApplication {
 

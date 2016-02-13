@@ -85,7 +85,15 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-netflix-hystrix-dashboard</artifactId>
+		</dependency>
 		<dependency>
 			<!-- Eureka service registration -->
 			<groupId>org.springframework.cloud</groupId>
@@ -95,6 +103,15 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-zuul</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.netflix.turbine</groupId>
+			<artifactId>turbine-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-netflix-turbine</artifactId>
+		</dependency>
+
 	</dependencies>
 
 
@@ -102,5 +119,6 @@
 		<module>EurekaServer</module>
 		<module>EmployeeService</module>
 		<module>zuul-proxy-server</module>
+		<module>hystrix-server</module>
 	</modules>
 </project>

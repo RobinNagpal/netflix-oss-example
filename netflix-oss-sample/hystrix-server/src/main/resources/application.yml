@@ -1,0 +1,21 @@
+spring:
+  application:
+     name: hystrix-server
+
+info:
+  component: Hystrix Server
+
+server:
+  port: 7777
+
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.web: DEBUG
+    
+# Discovery Server Access
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+    

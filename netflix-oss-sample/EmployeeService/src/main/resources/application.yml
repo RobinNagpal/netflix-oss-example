@@ -4,10 +4,27 @@ spring:
      
 # Discovery Server Access
 eureka:
+  instance:
+    hostname: localhost-${port:2222}
+    statusPageUrl: https://localhost:${port:2222}/info
+    healthCheckUrl: https://localhost:${port:2222}/health
+    homePageUrl: https://localhost:${port:2222}/
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 5
+
+    metadataMap:
+      instanceId: localhost:${port:2222}
+    nonSecurePort: ${port:2222}
   client:
     serviceUrl:
       defaultZone: http://localhost:1111/eureka/
 
 # HTTP Server
 server:
-  port: 2222   # HTTP (Tomcat) port
+  port: ${port:2222}   # HTTP (Tomcat) port
+
+  
+turbine:
+  aggregator:
+    clusterConfig: employee-service
+  appConfig: employee-service

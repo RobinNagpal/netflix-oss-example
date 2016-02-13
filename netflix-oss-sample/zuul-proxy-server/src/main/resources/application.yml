@@ -1,3 +1,7 @@
+spring:
+  application:
+     name: zuul-server
+
 info:
   component: Zuul Server
   
@@ -10,10 +14,14 @@ endpoints:
     sensitive: false
 
 zuul:
+  host:
+    socket-timeout-millis: 30000
   routes:
-    stores: /stores/**
-    customers: /customers/**
-
+    employee-service: 
+      path: /employees/**
+      serviceId: EMPLOYEE-SERVICE
+      
+      
 server:
   port: 8765
 
@@ -21,9 +29,23 @@ logging:
   level:
     ROOT: INFO
     org.springframework.web: DEBUG
+
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: false
+  
+  
     
 # Discovery Server Access
 eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 5
+    hostname: localhost
+    nonSecurePort: 8765
   client:
     serviceUrl:
       defaultZone: http://localhost:1111/eureka/
